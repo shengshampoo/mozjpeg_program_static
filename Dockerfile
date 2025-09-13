@@ -15,6 +15,6 @@ RUN apk add --no-cache \
   cmake ninja nasm g++ xz
 
 ENV XZ_OPT=-e9
-COPY build-static-tmux.sh build-static-mozjpeg.sh
+COPY build-static-mozjpeg.sh build-static-mozjpeg.sh
 RUN chmod +x ./build-static-mozjpeg.sh
 RUN bash ./build-static-mozjpeg.sh
