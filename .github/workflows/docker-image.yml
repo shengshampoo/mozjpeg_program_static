@@ -1,4 +1,4 @@
-name: Docker Image CI - X86_64 for Alpine Linux
+name: Docker Image CI -  X86_64/AARCH64 for Alpine Linux
 
 on:
   push:
@@ -10,7 +10,10 @@ jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v4
@@ -25,15 +28,15 @@ jobs:
     - name: Upload static program - guetzlimm
       uses: actions/upload-artifact@v4
       with:
-        name: guetzlimm
+        name: guetzlimm-${{ matrix.os }}
         path: ./guetzlimm.tar.xz
     - name: Upload static program - zopflimm
       uses: actions/upload-artifact@v4
       with:
-        name: zopflimm
+        name: zopflimm-${{ matrix.os }}
         path: ./zopflimm.tar.xz
     - name: Upload static program - mozjpegmm
       uses: actions/upload-artifact@v4
       with:
-        name: mozjpegmm
+        name: mozjpegmm-${{ matrix.os }}
         path: ./mozjpegmm.tar.xz
