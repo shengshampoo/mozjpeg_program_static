@@ -22,8 +22,18 @@ jobs:
         docker run --cidfile=builder.cid builder true
         docker cp "$(cat builder.cid):work/artifact/." .
 
-    - name: Upload static program
+    - name: Upload static program - guetzlimm
       uses: actions/upload-artifact@v4
       with:
-        name: mozjpeg
-        path: ./*.tar.xz
+        name: guetzlimm
+        path: ./guetzlimm.tar.xz
+    - name: Upload static program - zopflimm
+      uses: actions/upload-artifact@v4
+      with:
+        name: zopflimm
+        path: ./zopflimm.tar.xz
+    - name: Upload static program - mozjpegmm
+      uses: actions/upload-artifact@v4
+      with:
+        name: mozjpegmm
+        path: ./mozjpegmm.tar.xz
