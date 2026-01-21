@@ -54,7 +54,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         file: ./mozjpegmm.tar.xz
-        asset_name: zopflimm-${{ runner.os }}-${{ runner.arch }}.tar.xz
+        asset_name: mozjpegmm-${{ runner.os }}-${{ runner.arch }}.tar.xz
         tag: refs/tags/continuous
         overwrite: true
         body: "fully static mozjpeg binary using alpine linux docker containers"         
