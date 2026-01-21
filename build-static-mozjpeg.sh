@@ -13,7 +13,7 @@ git clone  https://github.com/google/zopfli.git
 cd zopfli
 mkdir build
 cd build
-cmake -G Ninja -DCMAKE_INSTALL_PREFIX=/usr/local/zopflimm -DCMAKE_BUILD_TYPE=MinSizeRel -DBUILD_SHARED_LIBS=OFF -DCMAKE_EXE_LINKER_FLAGS="-static --static -no-pie -s" ..
+cmake -G Ninja -DCMAKE_INSTALL_PREFIX=/usr/local/zopflimm -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_BUILD_TYPE=MinSizeRel -DBUILD_SHARED_LIBS=OFF -DCMAKE_EXE_LINKER_FLAGS="-static --static -no-pie -s" ..
 ninja
 ninja install
 
