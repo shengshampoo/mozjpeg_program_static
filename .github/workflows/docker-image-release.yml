@@ -39,7 +39,7 @@ jobs:
         asset_name: guetzlimm-${{ runner.os }}-${{ runner.arch }}.tar.xz
         tag: refs/tags/continuous
         overwrite: true
-        body: "Fully static guetzli,zopfli and mozjpeg binary using alpine linux docker containers."       
+        body: "Fully static guetzli/zopfli/mozjpeg/libwebp binary using alpine linux docker containers."       
 
     - name: Upload binaries to release - zopfli
       uses: svenstaro/upload-release-action@v2
@@ -48,7 +48,7 @@ jobs:
         asset_name: zopflimm-${{ runner.os }}-${{ runner.arch }}.tar.xz
         tag: refs/tags/continuous
         overwrite: true
-        body: "Fully static guetzli,zopfli and mozjpeg binary using alpine linux docker containers." 
+        body: "Fully static guetzli/zopfli/mozjpeg/libwebp binary using alpine linux docker containers." 
 
     - name: Upload binaries to release - mozjpeg
       uses: svenstaro/upload-release-action@v2
@@ -57,4 +57,13 @@ jobs:
         asset_name: mozjpegmm-${{ runner.os }}-${{ runner.arch }}.tar.xz
         tag: refs/tags/continuous
         overwrite: true
-        body: "Fully static guetzli,zopfli and mozjpeg binary using alpine linux docker containers."         
+        body: "Fully static guetzli/zopfli/mozjpeg/libwebp binary using alpine linux docker containers."         
+
+    - name: Upload binaries to release - libwebp
+      uses: svenstaro/upload-release-action@v2
+      with:
+        file: ./libwebpmm.tar.xz
+        asset_name: libwebpmm-${{ runner.os }}-${{ runner.arch }}.tar.xz
+        tag: refs/tags/continuous
+        overwrite: true
+        body: "Fully static guetzli/zopfli/mozjpeg/libwebp binary using alpine linux docker containers." 
