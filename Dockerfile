@@ -12,6 +12,7 @@ RUN apk add --no-cache \
   zlib-dev zlib-static python3-dev \
   curl git libpng-dev libpng-static \
   libwebp-dev libwebp-static libjpeg-turbo-dev libjpeg-turbo-static \
+  giflib-dev giflib-static freeglut-dev \
   cmake ninja nasm g++ bash xz
 
 ENV XZ_OPT=-e9
